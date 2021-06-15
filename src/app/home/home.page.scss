@@ -6,6 +6,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  
 }
 
 #container strong {
@@ -24,4 +25,43 @@
 
 #container a {
   text-decoration: none;
+}
+
+.titulo{
+  text-align: center;
+}
+
+ion-content{
+  --ion-background-color: #151524;
+}
+
+.subtitle{
+  color: #fff;
+  font-weight: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+  
+}
+
+ion-header{
+  --ion-background-color: #151524;
+}
+ion-card-title{
+  font-size: 18px;
+}
+
+#play{
+  font-size: 30px;
+  color: #fff;
+}
+
+#play:hover{
+  color: #56ab91;
+  transition: all 0.5s ease-in-out;
+}
+
+ion-card{
+  border-radius: 10px;
+}
+.item-background-color{
+  --ion-item-background:#22223b;
 }

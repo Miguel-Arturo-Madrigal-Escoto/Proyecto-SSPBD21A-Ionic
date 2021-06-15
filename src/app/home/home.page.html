@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
+
+
+<ion-header [translucent]="true" mode="ios">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="titulo" style="color: #56ab91; background-color: #151524; ">
+      Tu Biblioteca&nbsp;&nbsp;<span style="color: #fff;"><ion-icon name="headset-outline"></ion-icon></span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" mode="ios">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large" class="titulo" style="color: #fff; background-color: #151524;">Mis Discos&nbsp;&nbsp;<span style="color: #56ab91;"><ion-icon name="headset-outline"></ion-icon></span></ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  
+  <ion-card *ngFor="let disco of discos" style="background-color: #22223b;" mode="ios" button="true">
+    <img loading="lazy" [src]="disco.caratula" alt="disco.titulo" />
+    <ion-card-header>
+      <ion-list>
+        <ion-item class="item-background-color" lines="full" mode="ios" *ngFor="let artista of disco.nombre_artistas">
+            <ion-label>
+              <ion-card-title>
+                {{artista}}
+              </ion-card-title>         
+            </ion-label>  
+            <ion-avatar>
+              <img [src]="getUrl(artista.replace(' ', ''))"/>
+            </ion-avatar>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>
+        <p class="subtitle">{{disco.titulo}}</p>
+      </ion-card-subtitle>
+      <ion-card-subtitle>
+        <p class="subtitle">{{disco.anio_produccion}}</p>
+      </ion-card-subtitle>
+      <ion-card-subtitle>
+        <p><ion-icon id="play" name="play-circle" ></ion-icon></p>
+      </ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
