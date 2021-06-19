@@ -36,7 +36,6 @@ export class HomePage implements OnInit{
     this.fotografias = [];
   }
   ngOnInit(){
-    
     this.discosService.fotografias.subscribe(fotografias => {
       this.fotografias = fotografias;
     });
